@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className={`items-center justify-center py-3 w-24 ${focused ? 'rounded-xl bg-white' : ''}`}>
+        <View className={`items-center justify-center py-3 w-24 ${focused ? 'rounded-xl bg-white shadow-xl shadow-blue' : ''}`}>
             <Image
                 source={icon}
                 resizeMode="contain"
