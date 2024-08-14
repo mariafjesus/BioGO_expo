@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "com.bioribas.biogo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/BioGO_logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bioribas.biogo"
     },
     "web": {
       "favicon": "./assets/BioGO_logo.png"

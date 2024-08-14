@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { router } from "expo-router";
-import { View } from 'react-native'
+import { View, Alert } from 'react-native'
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
+import { createUser } from '../../lib/appwrite';
 
 const SignUp = () => {
     const [form, setForm] = useState({
+        username: '',
         email: '',
         password: '',
         cofirmPassword: '',
@@ -14,13 +16,36 @@ const SignUp = () => {
     const [isSubmitting, setSubmitting] = useState(false);
 
     const submit = async () => {
+        if (form.username === "" || form.email === "" || form.password === "") {
+            Alert.alert('Error', 'Please fill in all the fields')
+            return;
+        }
+
         setSubmitting(true);
-        router.replace("/home");
-        setSubmitting(false);
+
+        try {
+            const result = await createUser(form.email, form.password, form.username);
+            setUser(result);
+            setIsLogged(true);
+
+            router.replace("/home");
+        } catch (error) {
+            Alert.alert('Error', error.message)
+        } finally {
+            setSubmitting(false);
+        }
     }
 
     return (
         <View className="w-full">
+            <FormField
+                title="Username"
+                placeholder="Username"
+                value={form.username}
+                handleChangeText={(e) => setForm({ ...form, username: e })}
+                otherStyles="mt-7"
+            />
+
             <FormField
                 title="Email"
                 placeholder="Email"

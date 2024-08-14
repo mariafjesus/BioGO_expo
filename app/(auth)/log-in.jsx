@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { router } from "expo-router";
-import { View } from 'react-native'
+import { View, Alert } from 'react-native'
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
+import { getCurrentUser, logIn } from '../../lib/appwrite';
 
 const LogIn = () => {
     const [form, setForm] = useState({
@@ -13,11 +14,26 @@ const LogIn = () => {
     const [isSubmitting, setSubmitting] = useState(false);
 
     const submit = async () => {
-        setSubmitting(true);
-        router.replace("/home");
-        setSubmitting(false);
-    }
+        if (form.email === "" || form.password === "") {
+            Alert.alert('Error', 'Please fill in all the fields')
+            return;
+        }
 
+        setSubmitting(true);
+
+        try {
+            await logIn(form.email, form.password);
+            const result = await getCurrentUser();
+            setUser(result);
+            setIsLogged(true);
+
+            router.replace("/home");
+        } catch (error) {
+            Alert.alert('Error', error.message)
+        } finally {
+            setSubmitting(false);
+        }
+    }
     return (
         <View className="w-full">
             <FormField
