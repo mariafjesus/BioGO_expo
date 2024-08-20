@@ -7,6 +7,8 @@ import eye_hide from "../assets/icons/eye_hide.png";
 import menu_lines from "../assets/icons/menu_lines.png";
 import close from "../assets/icons/close.png";
 import logout from "../assets/icons/logout.png";
+import sun from "../assets/icons/sun.png";
+import moon from "../assets/icons/moon.png";
 
 export default {
   camera,
@@ -18,4 +20,6 @@ export default {
   menu_lines,
   close,
   logout,
+  sun,
+  moon,
 };

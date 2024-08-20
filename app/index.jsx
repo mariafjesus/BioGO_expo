@@ -1,19 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { ScrollView, Text, View, Image } from 'react-native';
-import { Redirect, router } from 'expo-router';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-import { images } from '../constants';
-import CustomButton from '../components/CustomButton';
-import { useGlobalContext } from '../context/GlobalProvider';
+import { ScrollView, Text, View, Image } from "react-native";
+import { Redirect, router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "nativewind";
+import { useGlobalContext } from "../context/GlobalProvider";
+import CustomButton from "../components/CustomButton";
+import { images } from "../constants";
 
 export default function App() {
+  const { colorScheme } = useColorScheme();
   const {isLoading, isLoggedIn} = useGlobalContext();
-
+  
   if (!isLoading && isLoggedIn) return <Redirect href="/home" />
 
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView className="bg-white h-full dark:bg-primary">
       <Image 
         source={images.background_logo}
         className="absolute bottom-0 right-0 w-[100vw]"
@@ -26,11 +27,11 @@ export default function App() {
             resizeMode="contain"
           />
 
-          <Text className="text-3xl font-pbold text-center text-primary">
+          <Text className="text-3xl font-pbold text-center text-primary dark:text-white">
             Have fun exploring Nature!
           </Text>
 
-          <Text className="text-sm font-pregular text-center text-primary">
+          <Text className="text-sm font-pregular text-center text-primary dark:text-white">
             Identify, collect and learn more about the biodiversity around you with BioGO
           </Text>
 
@@ -41,7 +42,7 @@ export default function App() {
           />
         </View>
       </ScrollView>
-      <StatusBar backgroundColor="#FFFFFF" style="dark" />
+      <StatusBar backgroundColor={colorScheme === "light" ? "#FFFFFF" : "#201E50" } style={colorScheme === "light" ? "dark" : "light"} />
     </SafeAreaView>
   );
 }

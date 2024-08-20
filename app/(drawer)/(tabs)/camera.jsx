@@ -1,12 +1,10 @@
-import React from 'react'
-import { View, Image } from 'react-native'
-
-import { images } from '../../../constants'
-import HMenu from '../../../components/HMenu'
+import { View, Image } from "react-native";
+import HMenu from "../../../components/HMenu";
+import { images } from "../../../constants";
 
 const Camera = () => {
     return (
-        <View className="h-full bg-white">
+        <View className="h-full bg-white dark:bg-primary">
             {/*Header*/}
             <HMenu />
 

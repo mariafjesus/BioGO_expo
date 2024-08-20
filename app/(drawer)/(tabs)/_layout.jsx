@@ -1,12 +1,13 @@
-import { View, Text, Image } from 'react-native'
-import { Tabs } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { icons } from '../../../constants';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, Text, Image } from "react-native";
+import { Tabs } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { icons } from "../../../constants";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useColorScheme } from "nativewind";
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
-        <View className={`items-center justify-center py-3 w-24 ${focused ? 'rounded-xl bg-white shadow-xl shadow-blue' : ''}`}>
+        <View className={`items-center justify-center py-3 w-24 ${focused ? 'rounded-xl bg-white shadow-xl shadow-blue dark:bg-primary' : ''}`}>
             <Image
                 source={icon}
                 resizeMode="contain"
@@ -21,15 +22,28 @@ const TabIcon = ({ icon, color, name, focused }) => {
 }
 
 const TabsLayout = () => {
+    const { colorScheme } = useColorScheme();
+    
     return (
         <>
-            <SafeAreaView className="flex-1 bg-white">
+            <SafeAreaView className="flex-1 bg-white dark:bg-primary">
                 {/* Menu */}
                 <Tabs
-                    screenOptions={{
+                    screenOptions={ colorScheme === "light" ? {
                         tabBarShowLabel: false,
                         tabBarActiveTintColor: '#201E50',
                         tabBarInactiveTintColor: '#838383',
+                        tabBarStyle: {
+                            backgroundColor: 'transparent',
+                            borderTopColor: 'transparent',
+                            shadowColor: 'transparent',
+                            position: 'absolute',
+                            height: 85,
+                        }
+                    } : {
+                        tabBarShowLabel: false,
+                        tabBarActiveTintColor: '#FFFFFF',
+                        tabBarInactiveTintColor: '#D9D9D9',
                         tabBarStyle: {
                             backgroundColor: 'transparent',
                             borderTopColor: 'transparent',
@@ -100,7 +114,7 @@ const TabsLayout = () => {
                         }}
                     />
                 </Tabs>
-                <StatusBar backgroundColor="#FFFFFF" style="dark" />
+                <StatusBar backgroundColor={colorScheme === "light" ? "#FFFFFF" : "#201E50" } style={colorScheme === "light" ? "dark" : "light"} />
             </SafeAreaView>
         </>
     )

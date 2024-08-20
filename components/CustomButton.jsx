@@ -1,6 +1,5 @@
-import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import { TouchableOpacity, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoading }) => {
     return (
@@ -16,7 +15,7 @@ const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoadi
                 end={{ x: 1, y: 1 }}
                 className={`rounded-xl min-h-[55] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : ''}`}
             >
-                <Text className={`text-white font-psemibold text-xl ${textStyles}`}>
+                <Text className={`text-white font-psemibold text-xl ${textStyles} dark:text-primary`}>
                     {title}
                 </Text>
             </LinearGradient>

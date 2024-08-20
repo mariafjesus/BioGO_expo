@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { router } from "expo-router";
-import { View, Alert } from 'react-native'
-import FormField from '../../components/FormField';
-import CustomButton from '../../components/CustomButton';
-import { getCurrentUser, logIn } from '../../lib/appwrite';
-import { useGlobalContext } from '../../context/GlobalProvider';
+import { View, Alert } from "react-native";
+import FormField from "../../components/FormField";
+import CustomButton from "../../components/CustomButton";
+import { getCurrentUser, logIn } from "../../lib/appwrite";
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const LogIn = () => {
     const {setUser, setLoggedIn} = useGlobalContext();
-
-    const [form, setForm] = useState({
-        email: '',
-        password: ''
-    })
-    
     const [isSubmitting, setSubmitting] = useState(false);
+    const [form, setForm] = useState({
+        email: "",
+        password: "",
+    })
 
     const submit = async () => {
         if (form.email === "" || form.password === "") {

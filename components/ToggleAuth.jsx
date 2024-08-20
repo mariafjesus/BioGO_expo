@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { View, Text, TouchableOpacity, Animated, useWindowDimensions } from 'react-native';
-import { useRouter } from 'expo-router';
+import React, { useRef } from "react";
+import { View, Text, TouchableOpacity, Animated, useWindowDimensions } from "react-native";
+import { useRouter } from "expo-router";
 
 const ToggleAuth = ({ currentPage, setCurrentPage }) => {
     const router = useRouter();
@@ -30,17 +30,17 @@ const ToggleAuth = ({ currentPage, setCurrentPage }) => {
     return (
         <View className="flex flex-row justify-center items-center w-full">
             <TouchableOpacity onPress={() => handlePress('login')}>
-                <Text className={`text-2xl font-psemibold ${currentPage === 'login' ? ' text-primary' : 'text-gray-200'} px-10`}>
+                <Text className={`text-2xl font-psemibold ${currentPage === 'login' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'} px-10`}>
                     Log In
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handlePress('signup')}>
-                <Text className={`text-2xl font-psemibold ${currentPage === 'signup' ? ' text-primary' : 'text-gray-200'} px-10`}>
+                <Text className={`text-2xl font-psemibold ${currentPage === 'signup' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'} px-10`}>
                     Sign Up
                 </Text>
             </TouchableOpacity>
             <Animated.View 
-                className="absolute bg-primary rounded-xl h-1 w-[45%]"
+                className="absolute bg-primary rounded-xl h-1 w-[45%] dark:bg-white"
                 style={{
                     bottom: -5,
                     left: linePosition,

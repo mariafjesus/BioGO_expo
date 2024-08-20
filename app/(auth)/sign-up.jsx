@@ -19,9 +19,14 @@ const SignUp = () => {
     const [isSubmitting, setSubmitting] = useState(false);
 
     const submit = async () => {
-        if (form.username === "" || form.email === "" || form.password === "") {
-            Alert.alert('Error', 'Please fill in all the fields')
-            return;
+        if (form.username === "" || form.email === "" || form.password === "" || form.confirmPassword === "") {
+            Alert.alert('Error', 'Please fill in all the fields');
+            return
+        }
+
+        if (form.confirmPassword) {
+            Alert.alert('Error', "Passwords don't match");
+            return
         }
 
         setSubmitting(true);
@@ -33,7 +38,7 @@ const SignUp = () => {
 
             router.replace("/home");
         } catch (error) {
-            Alert.alert('Error', error.message)
+            Alert.alert('Error', error.message);
         } finally {
             setSubmitting(false);
         }

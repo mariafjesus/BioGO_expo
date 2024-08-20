@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
-import { View, Image, ScrollView } from 'react-native'
-import { Slot } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import ToggleAuth from '../../components/ToggleAuth';
-
-import { images } from '../../constants';
+import React, { useState } from "react";
+import { View, Image, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Slot } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme } from "nativewind";
+import ToggleAuth from "../../components/ToggleAuth";
+import { images } from "../../constants";
 
 const AuthLayout = () => {
-    const [currentPage, setCurrentPage] = useState('login');
+    const { colorScheme } = useColorScheme();
+    const [currentPage, setCurrentPage] = useState("login");
 
     return (
         <>
-            <SafeAreaView className="flex-1 bg-white">
+            <SafeAreaView className="flex-1 bg-white dark:bg-primary">
                 {/* Background Image */}
                 <Image
                     source={images.background_logo}
@@ -27,12 +28,11 @@ const AuthLayout = () => {
                         />
                         <ToggleAuth currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-                        {/* Content from LogIn or SignUp pages */}
-                        <Slot />
+                        <Slot /> {/* Content from Login or Signup pages */}
                     </View>
                 </ScrollView>
             </SafeAreaView>
-            <StatusBar backgroundColor="#FFFFFF" style="dark" />
+            <StatusBar backgroundColor={colorScheme === "light" ? "#FFFFFF" : "#201E50" } style={colorScheme === "light" ? "dark" : "light"} />
         </>    
     )
 }
