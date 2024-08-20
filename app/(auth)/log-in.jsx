@@ -4,8 +4,11 @@ import { View, Alert } from 'react-native'
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import { getCurrentUser, logIn } from '../../lib/appwrite';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 const LogIn = () => {
+    const {setUser, setLoggedIn} = useGlobalContext();
+
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -25,7 +28,7 @@ const LogIn = () => {
             await logIn(form.email, form.password);
             const result = await getCurrentUser();
             setUser(result);
-            setIsLogged(true);
+            setLoggedIn(true);
 
             router.replace("/home");
         } catch (error) {

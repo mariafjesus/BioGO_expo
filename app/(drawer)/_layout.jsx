@@ -3,10 +3,19 @@ import { Drawer } from 'expo-router/drawer';
 import { router } from 'expo-router';
 import { Text, TouchableOpacity, View, Image } from 'react-native'
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-
-import { icons } from '../../constants'
+import { logOut } from '../../lib/appwrite';
+import { icons } from '../../constants';
 
 const CustomDrawerContent = (props) => {
+    const logout = async () => {
+        try {
+            await logOut();
+            router.replace("/log-in");
+        } catch (error) {
+            Alert.alert('Error', error.message);
+        }       
+    }
+
     return (
         <DrawerContentScrollView {...props}>
             <TouchableOpacity
@@ -33,7 +42,10 @@ const CustomDrawerContent = (props) => {
                 onPress={() => router.push('/(drawer)/(tabs)/home')}
             />*/}
             <View className="h-12" />
-            <TouchableOpacity className="flex-row mx-6 py-2 content-center w-fit w-auto inline-block">
+            <TouchableOpacity
+                className="flex-row mx-6 py-2 content-center w-fit w-auto inline-block"
+                onPress={logout}
+            >
                 <Image
                     source={icons.logout}
                     tintColor="#201E50"
