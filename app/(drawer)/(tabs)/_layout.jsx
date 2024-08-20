@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import { Tabs } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { icons } from '../../constants';
+import { icons } from '../../../constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const TabIcon = ({ icon, color, name, focused }) => {

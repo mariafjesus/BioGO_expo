@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, Image, ScrollView, FlatList } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import HMenu from '../../components/HMenu'
+import HMenu from '../../../components/HMenu'
 
-import { images } from '../../constants'
+import { images } from '../../../constants'
 
 const Home = () => {
     return (
@@ -11,13 +11,13 @@ const Home = () => {
             <HMenu />
             <ScrollView>
                 <View className="pb-24 pt-12">
-                    <FlatList
+                    {/*<FlatList
                         data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
                         keyExtractor={(item) => item.$id}
                         renderItem={({ item }) => (
                             <Text className="text-3xl font-psemibold">{item.id}</Text>
                         )}
-                    />
+                    />*/}
                     <Text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</Text>
                     <Text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</Text>
                     <Text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</Text>
