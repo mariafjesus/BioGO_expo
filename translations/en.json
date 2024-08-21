@@ -1,0 +1,9 @@
+{
+    "index": {
+        "title": "Have fun exploring Nature!",
+        "subtitle": "Identify, collect and learn more about the biodiversity around you with BioGO"
+    },
+    "auth": {
+        "login": "login"
+    }
+}
