@@ -14,7 +14,6 @@ const AuthLayout = () => {
     return (
         <>
             <SafeAreaView className="flex-1 bg-white dark:bg-primary">
-                {/* Background Image */}
                 <Image
                     source={images.background_logo}
                     className="absolute bottom-0 right-0 w-[100vw]"
@@ -28,7 +27,7 @@ const AuthLayout = () => {
                         />
                         <ToggleAuth currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-                        <Slot /> {/* Content from Login or Signup pages */}
+                        <Slot />
                     </View>
                 </ScrollView>
             </SafeAreaView>

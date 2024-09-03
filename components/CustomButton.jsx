@@ -1,7 +1,7 @@
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoading }) => {
+const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoading, icon, iconStyles, iconColor }) => {
     return (
         <TouchableOpacity
             onPress={handlePress}
@@ -18,6 +18,13 @@ const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoadi
                 <Text className={`text-white font-psemibold text-xl ${textStyles} dark:text-primary`}>
                     {title}
                 </Text>
+                <Image
+                    source={icon}
+                    resizeMode="contain"
+                    className={iconStyles}
+                    tintColor={iconColor}
+                />
+                
             </LinearGradient>
         </TouchableOpacity>
     )

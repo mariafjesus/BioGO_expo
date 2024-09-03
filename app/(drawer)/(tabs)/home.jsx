@@ -37,6 +37,12 @@ const Home = () => {
                 end={{ x: 0, y: 1 }}
                 className="h-32 w-full absolute bottom-0 "
             />
+            <LinearGradient
+                colors={colorScheme === "light" ? ['rgba(255, 255, 255, 1)','rgba(255, 255, 255, 0.9)','transparent'] : ['rgba(32, 30, 80, 1)','rgba(32, 30, 80, 0.9)','transparent']}
+                start={{ x: 0, y: 0.2 }}
+                end={{ x: 0, y: 1 }}
+                className="h-16 w-full absolute top-0"
+            /> 
         </View>
     )
 }
