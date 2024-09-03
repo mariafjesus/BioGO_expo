@@ -8,7 +8,8 @@ const ToggleAuth = ({ currentPage, setCurrentPage }) => {
 
     // Get the width of the screen
     const { width: screenWidth } = useWindowDimensions();
-    const tabWidth = screenWidth * 0.45;
+    const startPlace = screenWidth * 0.05;
+    const tabWidth = screenWidth * 0.50;
 
     const handlePress = (page) => {
         if (currentPage !== page) {
@@ -24,23 +25,23 @@ const ToggleAuth = ({ currentPage, setCurrentPage }) => {
 
     const linePosition = animation.interpolate({
         inputRange: [0, 1],
-        outputRange: [0, tabWidth],
+        outputRange: [startPlace, tabWidth],
     });
 
     return (
-        <View className="flex flex-row justify-center items-center w-full">
-            <TouchableOpacity onPress={() => handlePress('login')}>
-                <Text className={`text-2xl font-psemibold ${currentPage === 'login' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'} px-10`}>
+        <View className="flex flex-row justify-center items-center w-[100vw]">
+            <TouchableOpacity onPress={() => handlePress('login')} className="w-[45vw]">
+                <Text className={`text-2xl font-psemibold text-center ${currentPage === 'login' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'}`}>
                     Log In
                 </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => handlePress('signup')}>
-                <Text className={`text-2xl font-psemibold ${currentPage === 'signup' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'} px-10`}>
+            <TouchableOpacity onPress={() => handlePress('signup')} className="w-[45vw]">
+                <Text className={`text-2xl font-psemibold text-center ${currentPage === 'signup' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'}`}>
                     Sign Up
                 </Text>
             </TouchableOpacity>
             <Animated.View 
-                className="absolute bg-primary rounded-xl h-1 w-[45%] dark:bg-white"
+                className="absolute bg-primary rounded-xl h-1 w-[45vw] dark:bg-white"
                 style={{
                     bottom: -5,
                     left: linePosition,
