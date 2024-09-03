@@ -17,7 +17,7 @@ export default function App() {
     <SafeAreaView className="bg-white h-full dark:bg-primary">
       <Image 
         source={images.background_logo}
-        className="absolute bottom-0 right-0 w-[100vw]"
+        className="absolute bottom-0 right-0 w-full h-full"
       />
       <ScrollView contentContainerStyle={{ height: '100%' }}>
         <View className="w-full justify-center items-center min-h-[85vh] px-4">

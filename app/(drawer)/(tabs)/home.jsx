@@ -14,7 +14,7 @@ const Home = () => {
             {/* Background Image */}
             <Image 
                 source={images.background_logo}
-                className="absolute bottom-0 right-0 w-[100vw]"
+                className="absolute bottom-0 right-0 w-full h-full"
             />
             <ScrollView>
                 <View className="pb-24 pt-12 px-4">

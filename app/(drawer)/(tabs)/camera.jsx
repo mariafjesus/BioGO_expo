@@ -120,7 +120,7 @@ const Camera = () => {
             {/* Background Image */}
             <Image 
                 source={images.background_logo}
-                className="absolute bottom-0 right-0 w-[100vw]"
+                className="absolute bottom-0 right-0 w-full h-full"
             />
             {content}
         </View>

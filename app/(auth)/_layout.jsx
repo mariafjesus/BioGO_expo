@@ -14,9 +14,9 @@ const AuthLayout = () => {
     return (
         <>
             <SafeAreaView className="flex-1 bg-white dark:bg-primary">
-                <Image
+                <Image 
                     source={images.background_logo}
-                    className="absolute bottom-0 right-0 w-[100vw]"
+                    className="absolute bottom-0 right-0 w-full h-full"
                 />
                 <ScrollView>
                     <View className="flex-1 justify-center items-center px-4 py-6 mt-0 pt-0 h-full">
