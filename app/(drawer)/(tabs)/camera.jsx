@@ -5,9 +5,11 @@ import { images, icons } from "../../../constants";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import CustomButton from "../../../components/CustomButton";
 import { useColorScheme } from "nativewind";
+import { useTranslation } from "react-i18next";
 
 const Camera = () => {
     const { colorScheme } = useColorScheme();
+    const { t } = useTranslation();
     const [facing, setFacing] = useState("back");
     const [flash, setFlash] = useState("off");
     const [torch, setTorch] = useState(false);
@@ -32,10 +34,10 @@ const Camera = () => {
                 setContent(
                     <View className="justify-center flex-1 mx-8">
                         <Text className="text-center font-psemibold text-primary dark:text-white text-lg">
-                            We need your permission to show the camera
+                            {t('camera.ask_permission')}
                         </Text>
                         <CustomButton
-                            title="Grant Permission"
+                            title={t('button.grant_permission')}
                             handlePress={requestPermission}
                             containerStyles="w-full mt-2"
                         />

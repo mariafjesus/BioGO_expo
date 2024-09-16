@@ -3,12 +3,14 @@ import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "nativewind";
+import { useTranslation } from 'react-i18next';
 import { useGlobalContext } from "../context/GlobalProvider";
 import CustomButton from "../components/CustomButton";
 import { images } from "../constants";
 
 export default function App() {
   const { colorScheme } = useColorScheme();
+  const { t } = useTranslation();
   const {isLoading, isLoggedIn} = useGlobalContext();
   
   if (!isLoading && isLoggedIn) return <Redirect href="/home" />
@@ -28,15 +30,15 @@ export default function App() {
           />
 
           <Text className="text-3xl font-pbold text-center text-primary dark:text-white">
-            Have fun exploring Nature!
+            {t('index.title')}
           </Text>
 
           <Text className="text-sm font-pregular text-center text-primary dark:text-white">
-            Identify, collect and learn more about the biodiversity around you with BioGO
+            {t('index.subtitle')}
           </Text>
 
           <CustomButton
-            title="Continue"
+            title={t('button.continue')}
             handlePress={() => router.push('/log-in')}
             containerStyles="w-full mt-7"
           />

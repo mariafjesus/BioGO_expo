@@ -4,11 +4,13 @@ import MapView, { Marker } from "react-native-maps";
 import * as Location from 'expo-location';
 import CustomButton from "../../../components/CustomButton";
 import { useColorScheme } from "nativewind";
+import { useTranslation } from "react-i18next";
 import HMenu from "../../../components/HMenu";
 import { icons, images } from "../../../constants";
 
 const Map = () => {
     const { colorScheme } = useColorScheme();
+    const { t } = useTranslation();
     const [location, setLocation] = useState(null);
     const [permissionStatus, setPermissionStatus] = useState(null);
     const [content, setContent] = useState(<View />);
@@ -40,10 +42,10 @@ const Map = () => {
             setContent(
                 <View className="justify-center flex-1 mx-8">
                     <Text className="text-center font-psemibold text-primary dark:text-white text-lg">
-                        We need your permission to show your location on the map
+                        {t('map.ask_permission')}
                     </Text>
                     <CustomButton
-                        title="Grant Permission"
+                        title={t('button.grant_permission')}
                         handlePress={requestLocationPermission}
                         containerStyles="w-full mt-2"
                     />

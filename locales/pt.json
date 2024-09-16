@@ -1,0 +1,39 @@
+{
+    "menu": {
+        "home": "Início",
+        "camera": "Câmara",
+        "map": "Mapa",
+        "ranking": "Classificação",
+        "dark_mode": "Modo Escuro",
+        "light_mode": "Modo Claro"
+    },
+    "index": {
+        "title": "Divirta-se explorando a Natureza!",
+        "subtitle": "Identifique, colecione e aprenda mais sobre a biodiversidade ao seu redor com o BioGO"
+    },
+    "auth": {
+        "login": "Entrar",
+        "signup": "Registar",
+        "logout": "Sair",
+        "username": "Nome de utilizador",
+        "password": "Senha",
+        "confirm_password": "Confirmar Senha",
+        "email": "E-mail"
+    },
+    "button": {
+        "continue": "Continuar",
+        "grant_permission": "Conceder Permissão"
+    },
+    "home": {
+
+    },
+    "camera": {
+        "ask_permission": "Precisamos da sua permissão para exibir a câmara"
+    },
+    "map": {
+        "ask_permission": "Precisamos da sua permissão para mostrar sua localização no mapa"
+    },
+    "ranking": {
+
+    }
+}

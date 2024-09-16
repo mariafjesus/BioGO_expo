@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import { Text, TouchableOpacity, View, Image } from 'react-native'
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { useColorScheme } from "nativewind";
+import { useTranslation } from 'react-i18next';
 import { logOut } from '../../lib/appwrite';
 import { icons } from '../../constants';
 
@@ -18,6 +19,7 @@ const CustomDrawerContent = (props) => {
     }
 
     const { colorScheme, toggleColorScheme } = useColorScheme();
+    const { t } = useTranslation();
 
     return (
         <DrawerContentScrollView {...props}>
@@ -56,7 +58,7 @@ const CustomDrawerContent = (props) => {
                     resizeMode="contain"
                 />
                 <Text className="font-psemibold text-white text-lg dark:text-primary w-36 text-center">
-                    {colorScheme === "light" ? "Dark Mode" : "Light Mode"}
+                    {colorScheme === "light" ? t('menu.dark_mode') : t('menu.light_mode')}
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -70,7 +72,7 @@ const CustomDrawerContent = (props) => {
                     resizeMode="contain"
                 />
                 <Text className="font-psemibold text-primary text-lg pl-2 dark:text-white">
-                    Logout
+                    {t('auth.logout')}
                 </Text>
             </TouchableOpacity>
         </DrawerContentScrollView>

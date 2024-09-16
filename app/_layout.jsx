@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import GlobalProvider from "../context/GlobalProvider";
+import { I18nextProvider } from 'react-i18next';
+import i18n from './../i18n';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -26,34 +28,36 @@ const RootLayout = () => {
     if (!fontsLoaded && !error) return null;
 
     return (
-        <GlobalProvider>
-            <Stack>
-                <Stack.Screen
-                    name="index"
-                    options={{
-                        headerShown: false
-                    }}
-                />
-                <Stack.Screen
-                    name="(auth)"
-                    options={{
-                        headerShown: false
-                    }}
-                />
-                <Stack.Screen
-                    name="(drawer)"
-                    options={{
-                        headerShown: false
-                    }}
-                />
-                {/*<Stack.Screen
-                    name="/search/[query]"
-                    options={{
-                        headerShown: false
-                    }}
-                />*/}
-            </Stack>
-        </GlobalProvider>
+        <I18nextProvider i18n={i18n}>
+            <GlobalProvider>
+                <Stack>
+                    <Stack.Screen
+                        name="index"
+                        options={{
+                            headerShown: false
+                        }}
+                    />
+                    <Stack.Screen
+                        name="(auth)"
+                        options={{
+                            headerShown: false
+                        }}
+                    />
+                    <Stack.Screen
+                        name="(drawer)"
+                        options={{
+                            headerShown: false
+                        }}
+                    />
+                    {/*<Stack.Screen
+                        name="/search/[query]"
+                        options={{
+                            headerShown: false
+                        }}
+                    />*/}
+                </Stack>
+            </GlobalProvider>
+        </I18nextProvider>
     )
 }
 

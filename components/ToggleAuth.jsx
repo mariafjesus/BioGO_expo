@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
 import { View, Text, TouchableOpacity, Animated, useWindowDimensions } from "react-native";
 import { useRouter } from "expo-router";
+import { useTranslation } from 'react-i18next';
 
 const ToggleAuth = ({ currentPage, setCurrentPage }) => {
     const router = useRouter();
     const animation = useRef(new Animated.Value(0)).current;
+    const { t } = useTranslation();
 
     // Get the width of the screen
     const { width: screenWidth } = useWindowDimensions();
@@ -32,12 +34,12 @@ const ToggleAuth = ({ currentPage, setCurrentPage }) => {
         <View className="flex flex-row justify-center items-center w-[100vw]">
             <TouchableOpacity onPress={() => handlePress('login')} className="w-[45vw]">
                 <Text className={`text-2xl font-psemibold text-center ${currentPage === 'login' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'}`}>
-                    Log In
+                    {t('auth.login')}
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handlePress('signup')} className="w-[45vw]">
                 <Text className={`text-2xl font-psemibold text-center ${currentPage === 'signup' ? ' text-primary dark:text-white' : 'text-gray-200 dark:text-gray-100'}`}>
-                    Sign Up
+                    {t('auth.signup')}
                 </Text>
             </TouchableOpacity>
             <Animated.View 

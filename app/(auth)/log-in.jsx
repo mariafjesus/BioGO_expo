@@ -5,8 +5,10 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { getCurrentUser, logIn } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import { useTranslation } from "react-i18next";
 
 const LogIn = () => {
+    const { t } = useTranslation();
     const {setUser, setLoggedIn} = useGlobalContext();
     const [isSubmitting, setSubmitting] = useState(false);
     const [form, setForm] = useState({
@@ -38,8 +40,8 @@ const LogIn = () => {
     return (
         <View className="w-full">
             <FormField
-                title="Email or Username"
-                placeholder="Email or Username"
+                title="Email"
+                placeholder={t('auth.email')}
                 value={form.email}
                 handleChangeText={(e) => setForm({ ...form, email: e })}
                 otherStyles="mt-7"
@@ -47,14 +49,14 @@ const LogIn = () => {
             />
             <FormField
                 title="Password"
-                placeholder="Password"
+                placeholder={t('auth.password')}
                 value={form.password}
                 handleChangeText={(e) => setForm({ ...form, password: e })}
                 otherStyles="mt-7"
             />
 
             <CustomButton
-                title="Log In"
+                title={t('auth.login')}
                 handlePress={submit}
                 containerStyles="w-full mt-7"
                 isLoading={isSubmitting}

@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { icons } from "../../../constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useColorScheme } from "nativewind";
+import { useTranslation } from 'react-i18next';
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
@@ -23,6 +24,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
 
 const TabsLayout = () => {
     const { colorScheme } = useColorScheme();
+    const { t } = useTranslation();
     
     return (
         <>
@@ -56,13 +58,13 @@ const TabsLayout = () => {
                     <Tabs.Screen
                         name="home"
                         options={{
-                            title: 'Home',
+                            title: t('menu.home'),
                             headerShown: false,
                             tabBarIcon: ({ color, focused }) => (
                                 <TabIcon
                                     icon={icons.home}
                                     color={color}
-                                    name="Home"
+                                    name={t('menu.home')}
                                     focused={focused}
                                 />
                             )
@@ -71,13 +73,13 @@ const TabsLayout = () => {
                     <Tabs.Screen
                         name="camera"
                         options={{
-                            title: 'Camera',
+                            title: t('menu.camera'),
                             headerShown: false,
                             tabBarIcon: ({ color, focused }) => (
                                 <TabIcon
                                     icon={icons.camera}
                                     color={color}
-                                    name="Camera"
+                                    name={t('menu.camera')}
                                     focused={focused}
                                 />
                             )
@@ -86,13 +88,13 @@ const TabsLayout = () => {
                     <Tabs.Screen
                         name="map"
                         options={{
-                            title: 'Map',
+                            title: t('menu.map'),
                             headerShown: false,
                             tabBarIcon: ({ color, focused }) => (
                                 <TabIcon
                                     icon={icons.map}
                                     color={color}
-                                    name="Map"
+                                    name={t('menu.map')}
                                     focused={focused}
                                 />
                             )
@@ -101,13 +103,13 @@ const TabsLayout = () => {
                     <Tabs.Screen
                         name="ranking"
                         options={{
-                            title: 'Ranking',
+                            title: t('menu.ranking'),
                             headerShown: false,
                             tabBarIcon: ({ color, focused }) => (
                                 <TabIcon
                                     icon={icons.medal}
                                     color={color}
-                                    name="Ranking"
+                                    name={t('menu.ranking')}
                                     focused={focused}
                                 />
                             )

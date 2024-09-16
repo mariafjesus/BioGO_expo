@@ -1,0 +1,39 @@
+{
+    "menu": {
+        "home": "Startseite",
+        "camera": "Kamera",
+        "map": "Karte",
+        "ranking": "Rangliste",
+        "dark_mode": "Dunkler Modus",
+        "light_mode": "Heller Modus"
+    },
+    "index": {
+        "title": "Viel Spaß beim Erkunden der Natur!",
+        "subtitle": "Identifizieren, sammeln und lernen Sie mehr über die Biodiversität um Sie herum mit BioGO"
+    },
+    "auth": {
+        "login": "Anmelden",
+        "signup": "Registrieren",
+        "logout": "Abmelden",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "confirm_password": "Passwort bestätigen",
+        "email": "E-Mail"
+    },
+    "button": {
+        "continue": "Weiter",
+        "grant_permission": "Berechtigung erteilen"
+    },
+    "home": {
+
+    },
+    "camera": {
+        "ask_permission": "Wir benötigen Ihre Erlaubnis, um die Kamera anzuzeigen"
+    },
+    "map": {
+        "ask_permission": "Wir benötigen Ihre Erlaubnis, um Ihren Standort auf der Karte anzuzeigen"
+    },
+    "ranking": {
+
+    }
+}

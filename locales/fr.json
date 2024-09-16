@@ -1,0 +1,39 @@
+{
+    "menu": {
+        "home": "Accueil",
+        "camera": "Caméra",
+        "map": "Carte",
+        "ranking": "Classement",
+        "dark_mode": "Mode Sombre",
+        "light_mode": "Mode Clair"
+    },
+    "index": {
+        "title": "Amusez-vous à explorer la nature !",
+        "subtitle": "Identifiez, collectez et apprenez-en plus sur la biodiversité autour de vous avec BioGO"
+    },
+    "auth": {
+        "login": "Se Connecter",
+        "signup": "S'inscrire",
+        "logout": "Se Déconnecter",
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
+        "confirm_password": "Confirmer le mot de passe",
+        "email": "E-mail"
+    },
+    "button": {
+        "continue": "Continuer",
+        "grant_permission": "Accorder la Permission"
+    },
+    "home": {
+
+    },
+    "camera": {
+        "ask_permission": "Nous avons besoin de votre permission pour afficher la caméra"
+    },
+    "map": {
+        "ask_permission": "Nous avons besoin de votre permission pour afficher votre position sur la carte"
+    },
+    "ranking": {
+
+    }
+}

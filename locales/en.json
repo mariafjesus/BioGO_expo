@@ -1,0 +1,39 @@
+{
+    "menu": {
+        "home": "Home",
+        "camera": "Camera",
+        "map": "Map",
+        "ranking": "Ranking",
+        "dark_mode": "Dark Mode",
+        "light_mode": "Light Mode"
+    },
+    "index": {
+        "title": "Have fun exploring Nature!",
+        "subtitle": "Identify, collect and learn more about the biodiversity around you with BioGO"
+    },
+    "auth": {
+        "login": "Log In",
+        "signup": "Sign Up",
+        "logout": "Logout",
+        "username": "Username",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "email": "Email"
+    },
+    "button": {
+        "continue": "Continue",
+        "grant_permission": "Grant Permission"
+    },
+    "home": {
+
+    },
+    "camera": {
+        "ask_permission": "We need your permission to show the camera"
+    },
+    "map": {
+        "ask_permission": "We need your permission to show your location on the map"
+    },
+    "ranking": {
+
+    }
+}
